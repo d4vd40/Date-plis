@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2mallo</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script>
+    var frases = [
+        "Please?",
+        "Come oooon",
+        "Allez Mallo!",
+        "S'il vous plait (I think)", 
+        "Allez, Allez :C",
+        "Don't you get tired of saying no?",
+        "Pleaseeeeee",
+        "(Geting short of phrases)",
+        "Por favor?",
+        "Andale no seas malita :c",
+        "Really, dont't you get tired?",
+        "Porfa, porfa, porfis?",
+        "Come on, you know you wanna!",
+        "Allez, mon ami, fais-moi plaisir!",
+        "(Ya no tengo mas ideas, plis di que si)",
+        "Pretty please with a cherry on top?",
+        "S'il vous plaît, pretty please, por favorcito?",
+        "Porfavoooooooooooir",
+        "Andale manita",
+        "Could you give me a hand? (hehe)",
+        "S'il vous plaît, pretty please, ¿me harías el favorcito?",
+        "Hello! my baby, Hello! My honey, Hello! my ragtime gal",
+        "If you refuse me, Honey, you'll lose me, then you'll be left alone",
+        "Malloouoououoooo!"
+    ];
+    var indice = 0; // Variable para rastrear el índice actual de la frase
+    
+    function cambiarTexto() {
+      if (indice < frases.length) {
+        var nuevoTexto = frases[indice];
+        document.getElementById("textoCambiable").innerHTML = nuevoTexto;
+        indice++; // Incrementa el índice para la próxima frase
+      } else {
+        // Si ya no quedan más frases, redirige a no2.html
+        window.location.href = "no2.html";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div
+      class="tenor-gif-embed"
+      data-postid="12182404927976551687"
+      data-share-method="host"
+      data-aspect-ratio="1"
+      data-width="100%"
+    >
+      <a href="https://tenor.com/view/peach-goma-goma-fall-down-gif-12182404927976551687">Mochi Sticker</a
+      >from
+      <a href="https://tenor.com/search/goma-gifs">Mochi Stickers</a>
+    </div>
+    <script
+      type="text/javascript"
+      async
+      src="https://tenor.com/embed.js"
+    ></script>
+    <h1 id="textoCambiable">Are you sure? is actually free 😌</h1>
+  
+    <div class="btn">
+      <a href="yes2.html">Yes</a>
+      <a href="#" onclick="cambiarTexto()">No</a>
+    </div>
+  </div>
+</body>
+</html>

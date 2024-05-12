@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2mallo</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script>
+    var intentos = 3;
+
+    function redireccionar() {
+      var inputNumero = document.getElementById("inputNumero").value;
+      if (inputNumero === "58008") { // Comprueba si el número introducido es 58008
+        window.location.href = "yes2.html";
+      } else if (inputNumero === "69") { // Comprueba si el número introducido es 69
+        document.getElementById("textoCambiante1").innerHTML = "¡69! that's the first one";
+        document.getElementById("textoCambiante2").innerHTML = "I'd like that point of view tho ;)";
+        document.getElementById("emojiCambiante").innerHTML = "😋";
+      } else {
+        document.getElementById("textoCambiante1").innerHTML = "Nope, try again";
+        document.getElementById("textoCambiante2").innerHTML = "";
+        document.getElementById("emojiCambiante").innerHTML = "";
+        intentos--;
+        if (intentos === 0) {
+          window.location.href = "no2.5.html";
+        } else {
+          alert("¡Incorrecto! Te quedan " + intentos + " intentos.");
+          document.getElementById("inputNumero").value = ""; // Borra el contenido del campo de entrada
+          document.getElementById("inputNumero").focus(); // Pone el foco en el campo de entrada
+        }
+      }
+    }
+
+    function enterPresionado(event) {
+      if (event.key === "Enter") {
+        redireccionar();
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div
+      class="tenor-gif-embed"
+      data-postid="17946881"
+      data-share-method="host"
+      data-aspect-ratio="1"
+      data-width="100%"
+    >
+      <a
+        href="https://tenor.com/view/mochi-mochi-peach-cat-crying-sad-playing-guitar-gif-17946881"
+        >Couple Forgive Me Sticker</a
+      >from
+      <a href="https://tenor.com/search/goma-sad-gifs">Couple Stickers</a>
+    </div>
+    <script
+      type="text/javascript"
+      async
+      src="https://tenor.com/embed.js"
+    ></script>
+
+    <h1 id="textoCambiante1">If you can guess my second favorite number I'll let you go</h1>
+    <p id="textoCambiante2">I'm pretty lazy to think of something (I'm sorry)</p>
+    
+
+    <label for="inputNumero" id="emojiCambiante"> 🫣 </label>
+    <input type="number" id="inputNumero" onkeypress="enterPresionado(event)" />
+
+    <button onclick="redireccionar()">Go</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2mallo</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed"
+            data-postid="411134658282219592"
+            data-share-method="host"
+            data-aspect-ratio="1"
+            data-width="100%">
+            <a href="https://tenor.com/view/goma-sad-gif-411134658282219592">Couple Forgive Me Sticker</a>
+            from
+            <a href="https://tenor.com/search/goma-sad-gifs">Couple Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <h1>Wrong! As a punishment you'll have to click a thousand times! </h1>
+        <p id="yesText" style="display: none;">Or you can show me a boob (both, both is good c: )</p>
+
+        <div class="btn">
+            <a href="yes2.html" id="yesBtn" style="display: none;">I'll do it (and bouncing because I like you c:)</a>
+            <a href="#" id="noBtn">🆘</a>
+        </div>
+    </div>
+
+    <script>
+        let clickCounter = null; // Inicializar el contador como null
+
+        // Función para manejar el clic en el enlace "No"
+        function handleClickNo(event) {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+
+            const noLink = document.getElementById("noBtn");
+            const yesLink = document.getElementById("yesBtn");
+            const yesText = document.getElementById("yesText");
+
+            // Si el contador es null, asigna el valor inicial y actualiza el texto del enlace
+            if (clickCounter === null) {
+                clickCounter = 1000;
+                noLink.textContent = `🆘 (Remaining: ${clickCounter})`;
+            } else {
+                // Decrementar el contador
+                clickCounter--;
+
+                // Actualizar el texto del enlace "No" con el contador actualizado
+                noLink.textContent = `🆘 (Remaining: ${clickCounter})`;
+
+                // Mostrar el botón "Yes" y el texto "Yes please;" cuando el contador sea igual o menor a 9995
+                if (clickCounter <= 990) {
+                    yesLink.style.display = "inline"; // Mostrar el botón "Yes"
+                    yesText.style.display = "inline"; // Mostrar el texto "Yes please;"
+                }
+
+                // Detener el contador cuando llegue a 0
+                if (clickCounter < 0) {
+                    noLink.removeEventListener("click", handleClickNo); // Eliminar el event listener
+                    noLink.textContent = "🆘"; // Restaurar el texto original
+                }
+            }
+        }
+
+        // Obtener el enlace "No" y adjuntar el manejador de clic
+        const noLink = document.getElementById("noBtn");
+        noLink.addEventListener("click", handleClickNo);
+    </script>
+</body>
+</html>
